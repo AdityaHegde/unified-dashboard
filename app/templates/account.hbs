@@ -1,0 +1,35 @@
+<div class="ui cards">
+  {{#each model key="id" as |account|}}
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          {{account.name}}
+        </div>
+        <div class="meta">
+          <a href={{account.providerData.connectLink}}>{{account.providerData.label}}</a>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+          <div class="ui basic button" {{action 'remove' account}}>Remove</div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<div class="ui cards">
+  {{#each accountsNotConnected key="@index" as |provider|}}
+    <div class="card">
+      <div class="content">
+        <div class="header">
+          {{provider.label}}
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+          <a class="ui basic button" href={{provider.connectLink}}>Connect</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,21 @@
+<div class="ui feed">
+  <button class="fluid ui button" {{action 'loadNewer'}}>Load Newer</button>
+  {{#each model key="id" as |article|}}
+    <div class="event">
+      <div class="content">
+        <div class="summary">
+          {{article.title}}
+          <div class="date">
+            {{moment-from-now article.created "X"}}
+          </div>
+        </div>
+        {{#if article.desc}}
+          <div class="extra text">
+            {{article.desc}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+  <button class="fluid ui button" {{action 'loadOlder'}}>Load Older</button>
+</div>

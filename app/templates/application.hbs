@@ -1,3 +1,20 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="ui container">
+  <div class="ui clearing vertical segment">
+    <h1 class="ui header left floated">
+      Unified Dashboard
+      {{#link-to 'articles' class="sub header"}}Articles{{/link-to}}
+    </h1>
+    <h4 class="ui header right floated">
+      {{#if model}}
+        {{#link-to 'account' class="ui item"}}{{model.username}}{{/link-to}}
+        <a class="ui item" href="/logout">logout</a>
+      {{else}}
+        {{#link-to 'login' class="ui item"}}Login{{/link-to}}
+        {{#link-to 'register' class="ui item"}}Register{{/link-to}}
+      {{/if}}
+    </h4>
+  </div>
+  <div class="ui clearing vertical segment">
+    {{outlet}}
+  </div>
+</div>
