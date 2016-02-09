@@ -19,6 +19,45 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* server/config.json is not included. Make sure to add it. Here is a sample,
+```
+{
+  "host" : {
+    "hostname" : "localhost",
+    "port"     : "8080"
+  },
+  "database" : {
+    "hostname" : "<mongodb hosetname>",
+    "port"     : "<port>",
+    "user"     : "<user>",
+    "password" : "<password>",
+    "database" : "<database name>"
+  },
+  "google" : {
+    "google_client_id" : "1234",
+    "google_client_secret" : "1234",
+    "google_places_api_key" : "1234"
+  },
+  "reddit" : {
+    "reddit_client_id" : "1234",
+    "reddit_client_secret" : "1234",
+    "user_agent" : "user agent as per reddit"
+  },
+  "twitter" : {
+    "twitter_consumer_key" : "",
+    "twitter_consumer_secret" : ""
+  },
+  "hacker_news" : {
+    "provider_name" : "hacker-news"
+  },
+  "params" : {
+    "limit" : 10
+  },
+  "session" : {
+    "secret" : "randon-secret"
+  }
+}
+```
 
 ## Running / Development
 
