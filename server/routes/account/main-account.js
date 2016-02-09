@@ -9,7 +9,7 @@ module.exports = function(app) {
       email : req.body.email,
     }), req.body.password, function(err, account) {
       if (err) {
-        return res.render("register", {info: "Sorry. That username already exists. Try again."});
+        return res.redirect('/#register');
       }
 
       passport.authenticate('local')(req, res, function () {
@@ -17,7 +17,7 @@ module.exports = function(app) {
           if (err) {
             return next(err);
           }
-          res.redirect('/account');
+          res.redirect('/#account');
         });
       });
     });
@@ -28,7 +28,7 @@ module.exports = function(app) {
       if (err) {
         return next(err);
       }
-      res.redirect('/account');
+      res.redirect('/#account');
     });
   });
 
