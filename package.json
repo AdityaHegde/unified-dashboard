@@ -44,13 +44,14 @@
   },
   "dependencies": {
     "body-parser": "^1.14.2",
+    "cfenv": "1.0.x",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "glob": "^6.0.4",
     "json-api": "^2.15.7",
     "lodash": "^4.0.1",
-    "mongoose": "^4.3.7",
+    "mongoose": "^4.4.3",
     "passport": "^0.3.2",
     "passport-google-oauth2": "^0.1.6",
     "passport-local": "^1.0.0",
@@ -60,7 +61,6 @@
     "promise": "^7.1.1",
     "qs": "^6.1.0",
     "request": "^2.69.0",
-    "twitter": "^1.2.5",
-    "cfenv": "1.0.x"
+    "twitter": "^1.2.5"
   }
 }

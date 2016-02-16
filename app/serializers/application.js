@@ -8,4 +8,9 @@ export default DS.JSONAPISerializer.extend({
   keyForRelationship: function(rawKey) {
     return rawKey;
   },
+
+  extractMeta: function(store, typeClass, payload) {
+    console.log(payload);
+    return this._super(...arguments);
+  },
 });

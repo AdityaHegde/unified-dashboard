@@ -25,6 +25,6 @@ module.exports = function(app) {
       next( new Error(403) );
     }
   }, function(req, res, next) {
-    res.redirect('/account');
+    res.redirect('/close.html');
   });
 };

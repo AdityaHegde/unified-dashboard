@@ -9,31 +9,35 @@ module.exports = function(app) {
       email : req.body.email,
     }), req.body.password, function(err, account) {
       if (err) {
-        return res.redirect('/#register');
+        return res.redirect('/register');
       }
 
       passport.authenticate('local')(req, res, function () {
+        console.log(req.session);
         req.session.save(function (err) {
           if (err) {
             return next(err);
           }
-          res.redirect('/#account');
+          res.redirect('/account');
         });
       });
     });
   });
 
   app.post('/login', passport.authenticate('local'), function(req, res, next) {
+    console.log(req.user);
+    console.log(req.session);
     req.session.save(function (err) {
       if (err) {
         return next(err);
       }
-      res.redirect('/#account');
+      res.redirect('/account');
     });
   });
 
   app.get('/logout', function(req, res, next) {
     req.logout();
+    console.log(req.session);
     req.session.save(function (err) {
       if (err) {
         return next(err);

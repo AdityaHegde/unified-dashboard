@@ -7,10 +7,14 @@ var googleStrategyInstance = new GoogleStrategy(
     callbackURL  : "http://" + config.host.hostname + ":" + config.host.port + "/auth/google/callback",
   }, 
   function(accessToken, refreshToken, profile, done) {
-    profile.accessToken = accessToken;
-    profile.refreshToken = refreshToken;
+    //profile.accessToken = accessToken;
+    //profile.refreshToken = refreshToken;
     process.nextTick(function () {
-      return done(null, profile);
+      return done(null, {
+        user_id : profile.id,
+        email : profile.email,
+        username : profile.displayName,
+      });
     });
   }
 );

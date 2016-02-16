@@ -9,8 +9,7 @@
         {{#link-to 'account' class="ui item"}}{{model.username}}{{/link-to}}
         <a class="ui item" href="/logout">logout</a>
       {{else}}
-        {{#link-to 'login' class="ui item"}}Login{{/link-to}}
-        {{#link-to 'register' class="ui item"}}Register{{/link-to}}
+        <a class="ui item" href="/auth/google">Connect Through gmail</a>
       {{/if}}
     </h4>
   </div>

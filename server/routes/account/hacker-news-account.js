@@ -20,7 +20,7 @@ module.exports = function(app) {
       });
     }
     else {
-      res.redirect('/');
+      res.redirect('/close.html');
     }
   });
 };

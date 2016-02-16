@@ -1,28 +1,33 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var User;
-var passportLocalMongoose = require('passport-local-mongoose');
+//var passportLocalMongoose = require('passport-local-mongoose');
 
 try {
   User = mongoose.model('User');
 }
 catch(e) {
   var UserSchema = new Schema({
-    email       : {
+    user_id : {
+      type  : String,
+      index : true,
+    },
+    email : {
       type   : String,
       index  : true,
       unique : true,
     },
-    createdAt   : {
+    username : String,
+    createdAt : {
       type    : Date,
       default : Date.now,
     },
-    updatedAt   : {
+    updatedAt : {
       type    : Date,
     },
   });
 
-  UserSchema.plugin(passportLocalMongoose);
+  //UserSchema.plugin(passportLocalMongoose);
   UserSchema.pre('save', function(next) {
     this.updatedAt = new Date();
     console.log(this);
